@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VegApp.Intro">
+
+  <ContentPage.Content>
+    <StackLayout>
+      <StackLayout VerticalOptions ="FillAndExpand"  HorizontalOptions="FillAndExpand" >
+        <Image Source="Intro1.png" VerticalOptions ="FillAndExpand">
+        </Image>
+      </StackLayout>
+      <StackLayout VerticalOptions ="End"  HorizontalOptions="Center" >
+        <Label TextColor="#77d065" FontSize = "20" Text="Skip" x:Name="skipLabel" />
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+
+
+</ContentPage>

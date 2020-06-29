@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VegApp.Classes; assembly=VegApp"
+             x:Class="VegApp.ItemList">
+
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+
+
+  <ContentPage.ToolbarItems >
+    <ToolbarItem Name="mnuSearch" Order="Primary" Icon="magnifyingglass.png"  Priority="0" Activated="OnClick" />
+    <ToolbarItem Name="mnuAlart" Order="Primary" Icon="shoppingbag.png"  Priority="1" />
+  </ContentPage.ToolbarItems>
+
+ 
+    
+      
+  <StackLayout VerticalOptions="StartAndExpand">
+    <ListView x:Name="searchlist" RowHeight="80" SeparatorColor="White" Margin="2,5,0,5" ItemSelected ="OnSelection" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell x:Name="listCell" >
+            <StackLayout Orientation="Horizontal"  >
+              <Image Source="{Binding ProductImage, Converter={StaticResource Base64ToImageConverter}}" Margin="5,0,0,0"  HeightRequest="60" WidthRequest="60" Aspect="AspectFit"/>
+              <StackLayout Orientation="Vertical"  WidthRequest="225">
+                <Label Text="{Binding ProductName}" FontFamily="Myriad Pro Regular" FontSize="15" TextColor="#0584C2" FontAttributes="Bold" Margin="5,5,0,0" />
+                <Label Text="{Binding Note}" FontFamily="Myriad Pro Regular" FontSize="7" TextColor="#0584C2" FontAttributes="Bold" Margin="60,0,0,0" />
+                <Label Text="{Binding PriceText}" FontFamily="Myriad Pro Regular" FontSize="7" TextColor="#0584C2" FontAttributes="Bold" Margin="150,0,0,0" />
+                <Label Text="** click to the product for other varients" FontFamily="Myriad Pro Regular" FontSize="7" TextColor="#0584C2" FontAttributes="Bold" Margin="20,0,0,0" />
+              </StackLayout>
+              <StackLayout Orientation="Vertical"  Margin="0,0,0,0" BackgroundColor = "#80B845" >
+                <Label Text="Add to Bag" FontFamily="Myriad Pro Regular" FontSize="7" TextColor="#ffffff" FontAttributes="Bold" Margin="5,10,5,5" />
+                <Image Source="shoppingbag.png"  HeightRequest="40" WidthRequest="40" Aspect="Fill"/>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+
+</ContentPage>

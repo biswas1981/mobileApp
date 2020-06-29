@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VegApp.Classes; assembly=VegApp"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="VegApp.MainPage"
+             Title="Nutiza"
+             >
+
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  
+
+  <ContentPage.ToolbarItems >
+    <ToolbarItem Name="mnuSearch" Order="Primary" Icon="magnifyingglass.png"  Priority="0"  />
+    <ToolbarItem Name="mnuAlart" Order="Primary" Icon="shoppingbag.png"  Priority="1" />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand" >
+      <StackLayout  VerticalOptions="Start">
+         <forms:CarouselView x:Name="MainCarouselView" HeightRequest ="150">
+                    <forms:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Aspect="AspectFill" IsVisible="True" Source="{Binding .}"  />
+                        </DataTemplate>
+                    </forms:CarouselView.ItemTemplate>
+         
+                </forms:CarouselView>
+      </StackLayout>
+        <ScrollView x:Name="scrollViewImage" HorizontalOptions = "Fill" VerticalOptions="Fill">
+          <StackLayout VerticalOptions="End">
+            <Image Source="{local:ImageResource VegApp.Images.veg.png}"  HorizontalOptions="FillAndExpand" x:Name="vegImage" />
+            <Image Source="{local:ImageResource VegApp.Images.fruits.png}"   HorizontalOptions="FillAndExpand" x:Name="fruitsImage"/>
+            <Image Source="{local:ImageResource VegApp.Images.flowers.png}"   HorizontalOptions="FillAndExpand" x:Name="flowersImage"/>
+            <Image Source="{local:ImageResource VegApp.Images.pay.png}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+          </StackLayout>
+        </ScrollView>
+     
+    </StackLayout>
+  </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VegApp.Classes; assembly=VegApp"
+             x:Class="VegApp.ItemDetails">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ScrollView>
+    <StackLayout VerticalOptions="Fill">
+      <StackLayout VerticalOptions="StartAndExpand" Margin="5,5,0,5">
+        <Image  Margin="5,5,5,5"  HeightRequest="200" WidthRequest="280" Aspect="AspectFill" x:Name="imgBanner"/>
+      </StackLayout>
+      <StackLayout VerticalOptions="StartAndExpand" Margin="5,5,0,5">
+        <Label Text="" FontFamily="Myriad Pro Regular" FontSize="15" TextColor="#0584C2" FontAttributes="Bold"  x:Name="lblProduct" />
+        <Label Text="" FontFamily="Myriad Pro Regular" FontSize="12" TextColor="#0584C2" FontAttributes="Bold" x:Name="lblPrice"/>
+        <Label Text="" FontFamily="Myriad Pro Regular" FontSize="12" TextColor="#0584C2" FontAttributes="Bold" x:Name="lblNote"/>
+
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+
+</ContentPage>
